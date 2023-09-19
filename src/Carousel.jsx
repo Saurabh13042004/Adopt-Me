@@ -41,9 +41,4 @@ class Carousel extends Component {
     );
   }
 }
-function CarouselParent({ animal }) {
-  const [breedList] = useBreedList(animal);
-
-  return <Carousel breedList={breedList}/>
-}
 export default Carousel

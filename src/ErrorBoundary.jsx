@@ -8,8 +8,22 @@ class ErrorBoundary extends Component {
     }
     componentDidCatch(error, info) {
         console.error("ErrorBoundary caught an error", error, info);
-        
+
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return (
+                <h2>
+                    This listing has an error. <Link to="/">Click here</Link> to go back to the home page or wait five seconds.
+                </h2>
+            )
+        }
+
+        return this.props.children;
     }
 }
 
+ 
 
+export default ErrorBoundary;
